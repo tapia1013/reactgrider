@@ -1,8 +1,19 @@
+// CHILD CANNOT PASS UP DATA TO THE PARENT DIRECTLY
+// PROPS IS USUALLY FOR PARENT TO CHILD
+                     
+                      
+        name of prop   value of prop
+                 |      |
+                 V      V 
+<CommentDetail author=  "" />
+
+// author can be anything like person, authorWhoMadeThis etc...
 
 
 
 
-               THREE TENETS OF COMPONENTS
+
+//               THREE TENETS OF COMPONENTS
 
 COMPONENT NESTING - A component can be shown inside of another
 
@@ -21,6 +32,23 @@ COMPONENT CONFIGURATION - We should be able to configure a component when its cr
 
 
 
+//          CREATING A RESUABLE CONFIG COMPONENT
+
+Identify the JSX that appears to be duplicated
+                           |
+                           V
+What is the purpose of that block of JSX?
+Think of a descriptive name for what it does
+                           |
+                           V
+Create a new file to house this new component
+It should have the same name as the component
+                           |
+                           V
+Create new component in th enew file, paste JSX into it
+                           |
+                           V
+Make the new component configurable by using Reacts 'props' system
 
 
 
@@ -43,6 +71,14 @@ COMPONENT CONFIGURATION - We should be able to configure a component when its cr
 
 
 
+//              COMPONENT HIERARCHY
+
+
+
+                  APP                <-ParentComponent
+          ==================
+          /       |        \
+    [commentD] [commentD] [commentD]  <-ChildComponents
 
 
 
@@ -54,6 +90,16 @@ COMPONENT CONFIGURATION - We should be able to configure a component when its cr
 
 
 
+                     PROPS
+======================================================
+SYSTEM FOR PASSING DATA FROM A PARENT COMPONENT TO A CHILD COMPONENT
+======================================================
+                       |
+                       |
+                       V
+======================================================
+GOAL IS TO CUSTOMIZE OR CONFIGURE A CHILD COMPONENT
+======================================================
 
 
 
@@ -61,20 +107,12 @@ COMPONENT CONFIGURATION - We should be able to configure a component when its cr
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+=======================================================
+                       APP
+=======================================================
+           |                |                 |
+           V                V                 V
+props  [show alex]      [show Jane]       [show sam]
 
 
 
