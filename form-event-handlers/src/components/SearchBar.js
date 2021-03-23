@@ -12,6 +12,11 @@ class SearchBar extends React.Component {
   state = { term: '' }
 
 
+
+
+
+
+
   // regular functions have problems with "this"
   // onFormSubmit(e) {
   //   e.preventDefault()
@@ -22,10 +27,18 @@ class SearchBar extends React.Component {
 
   // WE NEED TO USE ARROWS TO SOLVE PROBLEM WITH "THIS"
   onFormSubmit = (e) => {
-    e.preventDefault()
 
-    console.log(this.state.term);
+    this.props.onSubmit(this.state.term)
+
+    e.preventDefault()
   }
+
+
+
+
+
+
+
 
   // THE OTHER WAY TO SOLVE IS TO MAKE ARROW FUNC AND INVOKE()... {e => this.onFormSubmit(e)}
   render() {
@@ -50,7 +63,6 @@ export default SearchBar;
 
 
 
-// ********** VIDEO 90
 
 
 
