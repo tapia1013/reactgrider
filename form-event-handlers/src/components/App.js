@@ -19,7 +19,6 @@ class App extends React.Component {
 
     })
     // console.log(res.data.results);
-
     this.setState({ images: res.data.results })
   }
 
@@ -33,7 +32,7 @@ class App extends React.Component {
         style={{ marginTop: "10px" }}
       >
         <SearchBar onSubmit={this.onSearchSubmit} />
-        <ImageList />
+        <ImageList images={this.state.images} />
       </div>
     )
   }
