@@ -12,20 +12,6 @@ class SearchBar extends React.Component {
   state = { term: '' }
 
 
-
-
-
-
-
-  // regular functions have problems with "this"
-  // onFormSubmit(e) {
-  //   e.preventDefault()
-
-  //   console.log();
-  // }
-
-
-  // WE NEED TO USE ARROWS TO SOLVE PROBLEM WITH "THIS"
   onFormSubmit = (e) => {
 
     this.props.onSubmit(this.state.term)
@@ -34,13 +20,6 @@ class SearchBar extends React.Component {
   }
 
 
-
-
-
-
-
-
-  // THE OTHER WAY TO SOLVE IS TO MAKE ARROW FUNC AND INVOKE()... {e => this.onFormSubmit(e)}
   render() {
     return (
       <div className="ui segment">
