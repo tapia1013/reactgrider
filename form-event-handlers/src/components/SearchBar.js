@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
     e.preventDefault()
   }
 
-
+  // VIDEO 115
   render() {
     return (
       <div className="ui segment">
