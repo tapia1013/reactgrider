@@ -3,22 +3,31 @@ import SearchBar from './SearchBar';
 import youtube from '../apis/youtube'
 import VideoList from './VideoList'
 import VideoDetail from './VideoDetail';
-
+const KEY = 'AIzaSyBw9kVRvYeze2eGgYlz0g8lPzVZEtBZoH4'
 
 class App extends React.Component {
-
   state = { videos: [], selectedVideo: null }
 
+  componentDidMount() {
+    this.onTermSubmit('cars')
+  }
+
+
   onTermSubmit = async (term) => {
-    // import axios.create
     const res = await youtube.get('/search', {
-      // pass in q cause we didnt in yt.js
       params: {
-        q: term
+        q: term,
+        part: "snippet",
+        maxResults: 5,
+        type: 'video',
+        key: KEY
       }
     })
 
-    this.setState({ videos: res.data.items })
+    this.setState({
+      videos: res.data.items,
+      selectedVideo: res.data.items[0]
+    })
   }
 
   onVideoSelect = (video) => {
@@ -31,13 +40,21 @@ class App extends React.Component {
         <SearchBar
           onFormSubmit={this.onTermSubmit}
         />
-        <VideoDetail
-          video={this.state.selectedVideo}
-        />
-        <VideoList
-          onVideoSelect={this.onVideoSelect}
-          videos={this.state.videos}
-        />
+        <div className='ui grid'>
+          <div className='ui row'>
+            <div className='eleven wide column'>
+              <VideoDetail
+                video={this.state.selectedVideo}
+              />
+            </div>
+            <div className='five wide column'>
+              <VideoList
+                onVideoSelect={this.onVideoSelect}
+                videos={this.state.videos}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
