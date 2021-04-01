@@ -116,52 +116,78 @@ const policies = (listOfPolicies = [], action) => {
 
 
 
-// VIDEO 227
+
+
+
+
+// NOW WE USE REDUX LIBRARY
+
+const {createStore, combineReducers} = Redux;
+
+
+
+
+// WIRE TOGETHER ALL OF OUR REDUCERS
+
+
+// All of our departments/reducers put together
+const ourDepartments = combineReducers({
+  // these are the names of our reducer functions
+  accounting: accounting,
+  claimsHistory: claimsHistory,
+  policies: policies
+})
+
+
+// we pass in our departmetns in here
+const store = createStore(ourDepartments)
+
+
+// calls store that references to all our reducers
+store;
+
+
+
+// action
+const action = createPolicy('Cookie', 50)
+
+
+
+
+// store has methods that we can USE
+
+// dispatch, this is our form reciecever from example, so we pass in a action as a param
+store.dispatch(action);
 
 
 
 
 
 
+// NOW IF WE CHECK OUR ACCOUTING IT IS 190 RAISED FROM THE 100 CAUSE OF THE NEW POLICIES CREATED
+store.dispatch(createPolicy('Nye', 20))
+store.dispatch(createPolicy('Vee', 30))
+store.dispatch(createPolicy('Cookie', 40))
 
 
 
 
+// CREATING A CLAIMING AND SUBTRACTING FROM ACCOUNT BALACNCE, so a key of c;aimsHistory is added to store.getState()
+store.dispatch(createClaim('Jay', 120)) // our account is 70
+
+
+store.dispatch(createClaim('Gee', 50))
 
 
 
+// DELETING A POLICY
+store.dispatch(deletePolicy('Gee')) // removes 'gee' from our policy
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// getState() gets our entire assembled repo of data for our company
+console.log(store.getState())
+// array {accounting: 120, claimsHistory:[], policies: []}
 
 
 
