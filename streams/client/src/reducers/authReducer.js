@@ -18,8 +18,3 @@ export default (state = INITIAL_STATE, action) => {
       return state;
   }
 }
-
-
-
-
-// VIDEO 318
