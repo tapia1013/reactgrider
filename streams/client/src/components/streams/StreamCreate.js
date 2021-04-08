@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 // Field = component, reduxForm = function so its camelCase does the same as connect
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { createStream } from '../../actions'
+
+
 
 
 // const StreamCreate = () => {
@@ -53,10 +57,11 @@ class StreamCreate extends Component {
   }
 
 
-  onSubmit(formValues) {
-    console.log(formValues);
-  }
+  onSubmit = (formValues) => {
+    // console.log(formValues);
 
+    this.props.createStream(formValues)
+  }
 
 
 
@@ -111,11 +116,23 @@ const validate = (formValues) => {
 
 
 
-// reduxForm is the same as connect but its from the redux-form lib, it passes alot of props from redux-form to our code
-export default reduxForm({
+// // reduxForm is the same as connect but its from the redux-form lib, it passes alot of props from redux-form to our code.. once we use redux we have to connect()() but below this code is abetter example
+// export default connect()(reduxForm({
+//   form: 'streamCreate',
+//   validate: validate
+// })(StreamCreate));
+
+
+
+
+const formWrapped = reduxForm({
   form: 'streamCreate',
   validate: validate
 })(StreamCreate);
 
 
-// video 331
+
+
+export default connect(null, {
+  createStream
+})(formWrapped)
