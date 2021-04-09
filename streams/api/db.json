@@ -1,46 +1,16 @@
 {
   "streams": [
     {
-      "title": "first stream",
-      "description": "grreaattt streaaamm",
-      "id": 1
-    },
-    {
-      "title": "second stream",
-      "description": "heres some stream",
-      "id": 2
-    },
-    {
-      "title": "first stream",
-      "description": "the very first one",
-      "id": 3
-    },
-    {
-      "title": "first stream",
-      "description": "the very first one",
-      "id": 4
-    },
-    {
-      "title": "adsad",
-      "description": "adsasdasd",
-      "id": 5
-    },
-    {
-      "title": "adsad",
-      "description": "adsasdasd",
-      "id": 6
-    },
-    {
-      "title": "created this stream tho......",
-      "description": "this was made by me,,,,,,,,",
-      "userId": "118196197181694655952",
-      "id": 8
-    },
-    {
       "title": "unexpected behavior",
       "description": "Didn't expect that",
       "userId": "118196197181694655952",
       "id": 9
+    },
+    {
+      "title": "programmative nav",
+      "description": "you should not see this on the form by the time we click submit cause it should nav u forecfully",
+      "userId": "118196197181694655952",
+      "id": 10
     }
   ]
 }
