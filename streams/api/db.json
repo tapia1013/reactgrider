@@ -1,8 +1,8 @@
 {
   "streams": [
     {
-      "title": "unexpected behavior",
-      "description": "Didn't expect that",
+      "title": "nevermind this is a PATCH req",
+      "description": "PUT repLACES all THIS IS PATCH REQ AND DOESNT OVERRIDE USER ID AND BUtTONS",
       "userId": "118196197181694655952",
       "id": 9
     },
@@ -14,8 +14,7 @@
     },
     {
       "title": "Me streaming component reuse",
-      "description": "Watch me refactor some components lol!",
-      "userId": "118196197181694655952",
+      "description": "This has changed!!!",
       "id": 11
     }
   ]

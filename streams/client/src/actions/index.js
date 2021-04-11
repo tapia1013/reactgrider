@@ -69,12 +69,15 @@ export const fetchStream = id => async dispatch => {
 
 // put - edit stream
 export const editStream = (id, formValues) => async (dispatch) => {
-  const response = await streams.put(`/streams/${id}`, formValues)
+  // we use PATCH cause we want id, and edit/buttons cause we're not replacing all the props
+  const response = await streams.patch(`/streams/${id}`, formValues)
 
   dispatch({
     type: EDIT_STREAM,
     payload: response.data
   })
+
+  history.push('/')
 }
 
 
