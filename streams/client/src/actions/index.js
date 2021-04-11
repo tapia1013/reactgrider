@@ -89,6 +89,7 @@ export const deleteStream = id => async dispatch => {
     type: DELETE__STREAM,
     payload: id
   })
+  history.push('/')
 }
 
 
@@ -97,4 +98,3 @@ export const deleteStream = id => async dispatch => {
 
 
 
-// VIDEO 366
